@@ -1,0 +1,22 @@
+#find a pair that sums to 8
+
+def findPair(pair):
+    for i in range(len(pair)):
+        first= pair[i]
+        second=pair[len(pair)-1]
+        sum = first + second
+        if sum==8:
+            return sum, "numbers are: ", first, second
+        elif first<second:
+            count=1
+            first= pair[i+count]
+            sum=first+second
+            count+=1
+        elif first<second:
+            count= 1
+            second= pair[len(pair)-count]
+            sum= first + second
+            count+=1
+
+pair = [1,2,3,4,4,5]
+print(findPair(pair))
