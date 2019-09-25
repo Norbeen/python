@@ -30,7 +30,6 @@ class LinkedList:
 
     # This function prints the length of the linked list
     def length(self):
-        # mdify as in Q3
         current = self.first
         count = 0
         while current is not None:
@@ -64,18 +63,23 @@ class LinkedList:
             current = current.next
 
     # This function lets us delete a data from the node
-    def delStudent(self,x):
-        current= self.first
-        while (current is not None):
-            if current.id == x:
-                break
-            prev = current
-            current = current.next
-        if (current == None):
-            return
+    def delStudent(self,key):
+         cur = self.node
+         
+        #iterate through the linkedlist
+        while cur is not None: 
         
-        prev.next = current.next
-        current = None
+        #if the data is in first node, delete it
+            if (cur.data == key):
+                self.node = cur.next
+                return
+                
+        #if the data is in other nodes delete it
+            prev = cur
+            cur = cur.next
+            if (cur.data == key):
+                prev.next = cur.next
+                return
 
             # Initializing the constructor to linked list class
 
