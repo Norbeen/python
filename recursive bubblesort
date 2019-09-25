@@ -1,0 +1,14 @@
+def bubbleSort(myArray, lenArray):
+
+    if lenArray==1:
+        return myArray
+
+    else:
+        for i in range(len(myArray)-1):
+            if (myArray[i]>myArray[i+1]):
+                myArray[i], myArray[i+1] = myArray[i+1], myArray[i]
+        return bubbleSort(myArray, lenArray-1)
+
+myArray= [2,3,56,7]
+lenArray= len(myArray)
+print(bubbleSort(myArray, lenArray))
