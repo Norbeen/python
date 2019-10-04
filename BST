@@ -1,0 +1,87 @@
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
+
+    def get(self):
+        return self.val
+
+    def set(self, val):
+        self.val = val
+
+
+class BST:
+    def __init__(self):
+        self.root = None
+
+    def setRoot(self, val):
+        self.root = Node(val)
+
+
+    def insert(self, val):
+        if self.root is None:
+            self.setRoot(val)
+        else:
+            self.insertNode(self.root, val)
+
+    def insertNode(self, currentNode, val):
+
+        if val <= currentNode.val:
+            if currentNode.left:
+                self.insertNode(currentNode.left, val)
+            else:
+                currentNode.left = Node(val)
+
+        elif val > currentNode.val:
+            if currentNode.right:
+                self.insertNode(currentNode.right, val)
+            else:
+                currentNode.right = Node(val)
+
+    def printTree(self, order):
+        if (order == "1"):
+            print("Inorder")
+            self.printBST_In(self.root)
+        if (order == "2"):
+            print("Pre-order")
+            self.printBST_Pre(self.root)
+        if (order == "3"):
+            print("Post-order")
+            self.printBST_Post(self.root)
+
+    def printBST_In(self, rt):
+        if (rt != None):
+            self.printBST_In(rt.left)
+            print(rt.get())
+            self.printBST_In(rt.right)
+
+    def printBST_Pre(self, rt):
+        if (rt != None):
+            print(rt.get())
+            self.printBST_In(rt.left)
+            self.printBST_In(rt.right)
+
+    def printBST_Post(self, rt):
+        if (rt != None):
+            self.printBST_In(rt.left)
+            self.printBST_In(rt.right)
+            print(rt.get())
+
+
+bst1 = BST()
+bst1.insert(10)
+bst1.insert(5)
+bst1.insert(2)
+bst1.insert(4)
+bst1.insert(12)
+bst1.insert(11)
+bst1.insert(4)
+bst1.insert(9)
+bst1.insert(15)
+print()
+bst1.printTree("1")
+print()
+bst1.printTree("2")
+print()
+bst1.printTree("3")
