@@ -1,0 +1,50 @@
+def getZodiacSign(month, dayOfMonth):
+  if ((month == "april") and (dayOfMonth<20) or (month == "march") and (dayOfMonth>20) ):
+    return "aries"
+
+  elif((month == "may") and (dayOfMonth<21) or (month == "april") and (dayOfMonth>19)):
+    return "taurus"
+ 
+    
+  elif ((month == "june") and (dayOfMonth<21) or (month == "may") and (dayOfMonth>20)):
+    return "gemini"
+  
+    
+  elif ((month == "july") and (dayOfMonth<23) or (month == "june") and (dayOfMonth>20)):
+    return "cancer"
+ 
+  elif ((month == "august") and (dayOfMonth<23) or (month == "july") and (dayOfMonth>22)):
+    return "leo"
+
+    
+  elif ((month == "september") and (dayOfMonth<23) or (month == "august") and (dayOfMonth>22)):
+    return "virgo"
+
+    
+  elif ((month == "october") and (dayOfMonth<23) or (month == "september") and (dayOfMonth>22)):
+    return "libra"
+
+    
+  elif ((month == "november") and (dayOfMonth<22) or (month == "october") and (dayOfMonth>22)):
+    return "scorpio"
+
+    
+  elif ((month == "december") and (dayOfMonth<22) or (month == "november") and (dayOfMonth>21) ):
+    return "sagittarius"
+
+    
+  elif ((month == "january") and (dayOfMonth<20) or (month == "december") and (dayOfMonth>21)):
+    return "capricon"
+ 
+  elif ((month == "february") and (dayOfMonth<19) or (month == "january") and (dayOfMonth>19)):
+    return "aquarius"
+
+    
+  elif ((month == "march") and (dayOfMonth<21) or (month == "february") and (dayOfMonth>18)):
+    return "pisces"
+
+   
+  
+# Below is code that calls the function so you can see
+# its output. Feel free to modify it to help test your code.
+print(getZodiacSign('july', 21))
