@@ -1,0 +1,22 @@
+def findChange(cents):
+
+    halfDollar = int(cents/50)
+    remHalfDollar = cents % 50
+    print("half dollar is ", halfDollar)
+
+    quarter =int(remHalfDollar/25)
+    remQuarter = remHalfDollar %25
+    print("quarter is ", quarter )
+
+    dime= int(remQuarter/10)
+    remDime = remQuarter % 10
+    print("dime is ", dime)
+
+    nickel = int(remDime/5)
+    remNickel =remDime % 5
+    print("nickel is ", nickel)
+
+    print("cents is ", remNickel)
+
+
+findChange(618)
