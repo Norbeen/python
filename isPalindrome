@@ -1,18 +1,16 @@
 #check if a number is a palindrome for a given string
 
-
-def Palindrome(uInput):
-    n = len(uInput)
-    for i in range(n):
-        if uInput[i] == uInput[n-1]:
+def Palindrome(uInput, end):
+    for i in range(end):
+        if uInput[:] == uInput[::-1]:
             return True
         else:
             return False
 
+
 output = input("Enter what you want to check is a palindrome in UCASE: ")
-if Palindrome(output):
+end = len(output)-1
+if Palindrome(output,end):
     print( str(output) + " is a palindrome")
 else:
     print(str(output) + " is not palindrome")
-
-
