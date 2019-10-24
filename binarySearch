@@ -1,0 +1,26 @@
+#binary search
+
+def binarySearch(myList, search, low, high):
+
+    mid = (low + high)//2
+    while low<= high:
+        if (myList[mid] == search):
+            globals()['pos'] = mid
+            return True
+        if (myList[mid] > search ):
+            high =mid-1
+            return binarySearch(myList, search, low, high)
+        if (myList[mid]<search):
+            low= mid+1
+            return binarySearch(myList, search, low, high)
+
+myList= [2,3,5,4,6,8,11,22,34,0,66,77,99,88]
+myList.sort()
+low = 0
+high = len(myList)
+search = 11
+print(myList)
+if (binarySearch(myList, search, low, high)):
+    print("Item found at " + str(pos))
+else:
+    print("Item not found")
