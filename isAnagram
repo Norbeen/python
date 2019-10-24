@@ -5,9 +5,10 @@ def checkAmalgm(first, second):
     second = second.replace(' ', '').lower()
     return sorted(first) == sorted(second)
 
-first = "god"
-second = "dog"
+first = "The classroom"
+second = "School saster"
+
 if checkAmalgm(first, second):
     print("It is amalgm")
 else:
-    print("not amalgm")
+    print("It is not amalgm")
