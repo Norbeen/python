@@ -1,0 +1,13 @@
+#check if a number is amalgm
+
+def checkAmalgm(first, second):
+    first = first.replace(' ','').lower()
+    second = second.replace(' ', '').lower()
+    return sorted(first) == sorted(second)
+
+first = "god"
+second = "dog"
+if checkAmalgm(first, second):
+    print("It is amalgm")
+else:
+    print("not amalgm")
