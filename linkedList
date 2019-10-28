@@ -80,8 +80,29 @@ class LinkedList:
             if (cur.data == key):
                 prev.next = cur.next
                 return
+                
+                
+       # delete the duplicate value in linked list
+       
+    def delDup(self):
+        filteredArray = []
+        cur = self.first
+        prev = None
+        while cur is not None:
+            if cur.data not in filteredArray:
+                filteredArray.append(cur.data)
+                prev =cur
+                cur = cur.next
+            else:
+                prev.next = cur.next
+                cur = cur.next
+
+
+
 
             # Initializing the constructor to linked list class
+            
+        
 
 my_list = LinkedList()
 
